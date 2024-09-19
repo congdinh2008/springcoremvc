@@ -17,6 +17,14 @@
     </properties>
 
     <dependencies>
+
+        <!-- Using Thymeleaf Layout Dialect -->
+        <dependency>
+            <groupId>nz.net.ultraq.thymeleaf</groupId>
+            <artifactId>thymeleaf-layout-dialect</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf -->
         <dependency>
             <groupId>org.thymeleaf</groupId>
