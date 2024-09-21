@@ -18,6 +18,23 @@
 
     <dependencies>
 
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <!-- ORM - Object Relational Mapping - Configure Beadn Session Factory -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>7.0.0.Beta1</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+        <!-- SQL Server JDBC Driver -->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>12.8.1.jre11</version>
+        </dependency>
+
         <!-- Using Thymeleaf Layout Dialect -->
         <!-- Dùng chung layout cho nhiều views khác nhau để dễ sử dụng, tối giản, dễ quản lý , bảo
         trì -->
@@ -73,6 +90,30 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+        <!-- ORM - Object Relational Mapping - Register LocalSessionFactoryBean -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+        <!-- JDBC - Java Database Connectivity - DriverManagerDataSource -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+        <!-- Transaction Management - TransactionManager -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
             <version>${spring.version}</version>
         </dependency>
 
