@@ -19,6 +19,8 @@
     <dependencies>
 
         <!-- Using Thymeleaf Layout Dialect -->
+        <!-- Dùng chung layout cho nhiều views khác nhau để dễ sử dụng, tối giản, dễ quản lý , bảo
+        trì -->
         <dependency>
             <groupId>nz.net.ultraq.thymeleaf</groupId>
             <artifactId>thymeleaf-layout-dialect</artifactId>
@@ -26,6 +28,7 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf -->
+        <!-- Tích hợp với Thymeleaf cho phép viết code java trong html -->
         <dependency>
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf</artifactId>
@@ -33,27 +36,40 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring6 -->
+        <!-- Tích hợp với Thymeleaf cho phép viết code java trong html -->
         <dependency>
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf-spring6</artifactId>
             <version>${thymeleaf.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+        <!-- IOC Container - Spring Core -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+        <!-- Spring Context - Container - Spring IOC Container -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+        <!-- Spring Beans - Spring IOC Container -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+        <!-- Spring AOP - Aspect Oriented Programming -->
+        <!-- MVC - Model View Controller -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -61,6 +77,7 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+        <!-- Servlet API -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
