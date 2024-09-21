@@ -18,6 +18,20 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>9.0.0.Beta3</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
         <!-- ORM - Object Relational Mapping - Configure Beadn Session Factory -->
         <dependency>
