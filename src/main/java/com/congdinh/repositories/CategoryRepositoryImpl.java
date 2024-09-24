@@ -20,52 +20,33 @@ public class CategoryRepositoryImpl implements CategoryRepository {
 
     @Override
     public List<Category> findAll() {
-        try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("from Category", Category.class).getResultList();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new ArrayList<>();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        return session.createQuery("FROM Category", Category.class).getResultList();
     }
 
     @Override
     public Category findById(int id) {
-        try (Session session = sessionFactory.openSession()) {
-            return session.get(Category.class, id);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Category.class, id);
     }
 
     @Override
     public void save(Category category) {
-        try (Session session = sessionFactory.openSession()) {
-            session.persist(category);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        session.persist(category);
     }
 
     @Override
     public void update(Category category) {
-        try (Session session = sessionFactory.openSession()) {
-            session.merge(category);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        session.merge(category);
     }
 
     @Override
     public void delete(int id) {
-        try (Session session = sessionFactory.openSession()) {
-            Category category = session.get(Category.class, id);
-            if (category != null) {
-                session.remove(category);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        Category category = session.get(Category.class, id);
+        session.remove(category);
     }
 
 }

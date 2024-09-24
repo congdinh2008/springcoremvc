@@ -2,10 +2,13 @@ package com.congdinh.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.congdinh.dtos.category.CategoryDTO;
 import com.congdinh.entities.Category;
 import com.congdinh.repositories.CategoryRepository;
 
+@Service
 public class CategoryServiceImpl implements CategoryService {
     private final CategoryRepository categoryRepository;
 
@@ -45,21 +48,30 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void save(CategoryDTO categoryDTO) {
-        if(categoryDTO == null) {
+        if (categoryDTO == null) {
             throw new IllegalArgumentException("Category is required");
         }
 
-        var category = new Category();
-        category.setName(categoryDTO.getName());
-        category.setDescription(categoryDTO.getDescription());
-
-        categoryRepository.save(category);
+        if (categoryDTO.getId() != 0) {
+            var category = categoryRepository.findById(categoryDTO.getId());
+            if (category == null) {
+                throw new IllegalArgumentException("Category not found");
+            }
+            category.setName(categoryDTO.getName());
+            category.setDescription(categoryDTO.getDescription());
+            categoryRepository.save(category);
+        } else {
+            var category = new Category();
+            category.setName(categoryDTO.getName());
+            category.setDescription(categoryDTO.getDescription());
+            categoryRepository.save(category);
+        }
     }
 
     @Override
     public void update(CategoryDTO categoryDTO) {
         // Kiem tra gia tri can tao co null ko
-        if(categoryDTO == null) {
+        if (categoryDTO == null) {
             throw new IllegalArgumentException("Category is required");
         }
 

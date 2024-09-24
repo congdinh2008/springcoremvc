@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layouts/layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title layout:fragment="title">Category Management</title>
+</head>
+
+<body>
+    <section class="manager" layout:fragment="content">
+        <div class="card border border-slate-300 rounded-md">
+            <div class="card-header p-3">
+                <h1>Category Management</h1>
+            </div>
+            <div class="card-body p-3 border-y border-slate-300">
+                <div class="flex justify-end">
+                    <a th:href="@{/categories/create}" class="bg-green-500 text-white rounded-full p-3 px-4">Create</a>
+                </div>
+                <table class="table-auto w-full">
+                    <thead>
+                        <tr class="*:p-2 *:text-left">
+                            <th class="border border-slate-300">ID</th>
+                            <th class="border border-slate-300">Name</th>
+                            <th class="border border-slate-300">Description</th>
+                            <th class="border border-slate-300">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="category : ${categories}" class="*:p-2 *:text-left">
+                            <td class="border border-slate-300" th:text="${category.id}"></td>
+                            <td class="border border-slate-300" th:text="${category.name}"></td>
+                            <td class="border border-slate-300" th:text="${category.description}"></td>
+                            <td class="border border-slate-300">
+                                <a th:href="@{'/categories/edit/' + ${category.id}}" class="btn btn-primary">Edit</a>
+                                <a th:href="@{'/categories/delete/' + ${category.id}}" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
